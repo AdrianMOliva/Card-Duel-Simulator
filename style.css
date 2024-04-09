@@ -1,0 +1,77 @@
+body {
+    padding: 0;
+    text-align: center;
+  }
+
+#start-screen{
+    padding: 20px 0px;
+    display: none;
+}
+
+#game-container{
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    border: 1px solid;
+    height: 100vw;
+    background-color: blue;
+}
+
+#game-screen {
+    /*display: none;*/
+    align-content: center;
+    
+    border: 1px solid;
+    width: 100vw;
+    
+  }
+
+#board-screen{
+    
+    position: relative;
+    left: 370px;
+    bottom: 200px;
+    background-image: url(images/background.jpg);
+    background-size: cover;
+    width: 780px;
+    height: 650px;
+    border: 1px solid white;
+}
+
+.deck1{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    background-image: url(images/Back-DG-EN-VG.webp);
+    background-size: cover;
+    width: 100px;
+    height: 150px;
+    
+    border: 2px solid white;
+
+}
+
+.deck2{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-image: url(images/Back-DG-EN-VG.webp);
+    background-size: cover;
+    width: 100px;
+    height: 150px;
+    border: 2px solid white;
+
+}
+
+#playCard-button{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 150px;
+    width: 150px;
+    border: 1px solid red;
+}
+
+  #end-game {
+    display: none;
+  }
