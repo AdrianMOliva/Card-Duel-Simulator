@@ -8,49 +8,38 @@
 </head>
 <body>
 <main>
-    <div id = "start-screen">
-        <img src = "images/1200px-Yu-Gi-Oh!_(Logo).jpg" alt="" class ="logo-game"/>
+    <div id = "startScreen">
+        <img src = "images/1200px-Yu-Gi-Oh!_(Logo).jpg" alt="" class ="logoGame"/>
         <br/>
-        <button id = "start-button">Go Duel</button>
-        <p>Select the cards to play in each hand and the first player which HP is 0, loses!</p>
+        <button id = "startButton">Go Duel!</button>
+        <p>Select the card to play in each hand and the first player which HP is 0, loses!</p>
         <img src = "images/Back-DG-EN-VG.webp" alt="" class ="backCard-start"/>
         <img src = "images/Back-DG-EN-VG.webp" alt="" class ="backCard-start"/>
         <img src = "images/Back-DG-EN-VG.webp" alt="" class ="backCard-start"/>
     </div>
-    <div id="game-container">
-        <div id ="game-screen">
+    <div id="gameContainer">
+        <div id ="gameScreen">
         
-        <div id ="board-screen">
-            <div class="deck1"></div>
-            <div class="deck2"><p id="health-points2">HP 2000</p></div>
+        <div id ="boardScreen">
+            <div class="deck1"><p>HP: <span id="hpPlayer2">2000</span></p></div>
+            <div class="deck2"><p>HP: <span id="hpPlayer1">2000</span></p></div>
             <div id="handPlayer1"></div>
             <div id = "handPlayer2"></div>
-            <button id="playCard-button">Play Card</button>
-        </div>
-
-        <div id ="health-points2">
-            <div>
-            <p>HP: <span id="hpPlayer2">2000</span></p>
-            </div>
-        </div>
-
-        <div id="health-points1">
-            <div>
-              <p>HP: <span id="hpPlayer1">2000</span></p>
-            </div>
+            <button id="playCardButton">Play Card</button>
         </div>
         
     </div>
     
-    <div id="end-game">
+    <div id="endGame">
         <img src="images/tcg-banner-hero.webp" alt="" class="ending-img" />
-        <h1 id="result-text"></h1>
+        <h1 id="resultText"></h1>
         <br />
-        <button id="restart-button">Restart game</button>
+        <button id="restartButton">Restart game</button>
       </div>
 
 
 </main>
-    <script src="src/index.js"></script>  
+    <script src="index.js"></script>  
+    <script src ="game.js"></script>
 </body>
 </html>
