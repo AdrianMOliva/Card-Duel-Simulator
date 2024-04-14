@@ -59,7 +59,7 @@ body {
   width: 780px;
   height: 650px;
   border: 1px solid white;
-  margin-left: 550px;
+  left: 350px;
 }
 
 .deck1 {
@@ -91,6 +91,52 @@ body {
 
 .deck2 > p {
   color: white;
+}
+
+.cardLook {
+  width: 100px;
+  height: 150px;
+  color: white;
+}
+
+#handPlayer1 {
+  border: 1px solid blue;
+  width: 400px;
+  height: 150px;
+  position: absolute;
+  bottom: 0;
+  left: 190px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#handPlayer2 {
+  border: 1px solid blue;
+  width: 400px;
+  height: 150px;
+  position: absolute;
+  top: 0;
+  left: 190px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#playedCardDiv1 {
+  border: 1px solid blue;
+  width: 400px;
+  height: 150px;
+  position: absolute;
+  bottom: 160px;
+  left: 190px;
+}
+
+#playedCardDiv2 {
+  border: 1px solid blue;
+  width: 400px;
+  height: 150px;
+  position: absolute;
+  top: 160px;
+  left: 190px;
 }
 
 #playCardButton {
