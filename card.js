@@ -78,12 +78,17 @@ class Deck {
   }
 }
 
-class Player {
-  constructor(name, handElement) {
-    this.name = name;
+class Player1 {
+  constructor(card, handElement) {
+    this.card = card;
     this.hand = [];
     this.handElement = handElement;
     this.maxHandSize = 3;
+    this.handElement.addEventListener("click", (event) => {
+      if (event.target.classList.contains("cardLook")) {
+        this.selectingCard(event.target);
+      }
+    });
   }
 
   drawStarterHand(deck) {
@@ -110,4 +115,52 @@ class Player {
       this.handElement.appendChild(cardDiv);
     });
   }
+
+  selectingCard(clickedCard) {
+    document.querySelectorAll(".cardLook").forEach((card) => {
+      card.classList.remove("selected");
+    });
+
+    clickedCard.classList.add("selected");
+  }
+}
+
+class Player2 {
+  constructor(card, handElement) {
+    this.card = card;
+    this.hand = [];
+    this.handElement = handElement;
+    this.maxHandSize = 3;
+  }
+
+  drawStarterHand(deck) {
+    while (this.hand.length < this.maxHandSize) {
+      this.drawCardFromDeck(deck);
+    }
+  }
+
+  drawCardFromDeck(deck) {
+    if (this.hand.length < this.maxHandSize) {
+      const card = deck.drawCard();
+      this.hand.push(card);
+      this.displayHand();
+    }
+  }
+
+  displayHand() {
+    this.handElement.innerHTML = "";
+    this.hand.forEach((card) => {
+      const cardDiv2 = document.createElement("div");
+      cardDiv2.innerText = card.power;
+      cardDiv2.classList.add("cardLook");
+      cardDiv2.style.backgroundImage = "url(images/Back-DG-EN-VG.webp)";
+      this.handElement.appendChild(cardDiv2);
+    });
+  }
+
+  /*showCard() {
+    cardDiv2.innerText = card.power;
+    cardDiv2.classList.add("cardLook");
+    cardDiv2.style.backgroundImage = `url(${card.cardImage})`;
+  }*/
 }
