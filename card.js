@@ -37,7 +37,7 @@ const cardDeck = [
   {
     name: "Summoned Skull",
     power: 2500,
-    cardImage: "images/Summoned Skull.webp",
+    cardImage: "images/SummonedSkull.webp",
   },
   {
     name: "Torike",
@@ -55,22 +55,6 @@ const cardDeck = [
     cardImage: "images/Joker.jpg",
   },
 ];
-
-class Card {
-  constructor(image, power) {
-    this.image = image;
-    this.power = power;
-  }
-
-  drawingHand() {
-    const drawedCard = document.createElement("div");
-    drawedCard.innerText = this.power;
-    drawedCard.classList.add("cardLook");
-    drawedCard.style.backgroundImage = `url(${this.image})`;
-    Game.handPlayer1.appendChild(drawedCard);
-    Game.handPlayer2.appendChild(drawedCard);
-  }
-}
 
 class Deck {
   constructor(cards) {
@@ -122,21 +106,8 @@ class Player {
       const cardDiv = document.createElement("div");
       cardDiv.innerText = card.power;
       cardDiv.classList.add("cardLook");
+      cardDiv.style.backgroundImage = `url(${card.cardImage})`;
       this.handElement.appendChild(cardDiv);
     });
   }
-
-  /*playCard(index) {
-    if (index >= 0 && index < this.hand.length) {
-      // Remove the card from the player's hand
-      const playedCard = this.hand.splice(index, 1)[0];
-      // Update the display of the hand
-      this.displayHand();
-      return playedCard; // Return the played card
-    } else {
-      console.log("Invalid card index.");
-      return null;
-    }
-  }
-}*/
 }

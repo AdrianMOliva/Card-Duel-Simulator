@@ -96,7 +96,12 @@ body {
 .cardLook {
   width: 100px;
   height: 150px;
-  color: white;
+  color: black;
+  background-size: cover;
+  justify-content: center;
+  align-content: flex-end;
+  font-size: 25px;
+  font-weight: bold;
 }
 
 #handPlayer1 {
