@@ -54,6 +54,26 @@ const cardDeck = [
     power: Math.floor(Math.random() * (300 - 10) + 10) * 10,
     cardImage: "images/Joker.jpg",
   },
+  {
+    name: "White Magical Hat",
+    power: 1000,
+    cardImage: "images/WhiteMagicalHat.webp",
+  },
+  {
+    name: "Red Eyes Dragon",
+    power: 2400,
+    cardImage: "images/RedEyes.webp",
+  },
+  {
+    name: "Battle Warrior",
+    power: 700,
+    cardImage: "images/BattleWarrior.webp",
+  },
+  {
+    name: "Dream Clown",
+    power: 1200,
+    cardImage: "images/DreamClown.webp",
+  },
 ];
 
 class Deck {
@@ -123,6 +143,15 @@ class Player1 {
 
     clickedCard.classList.add("selected");
   }
+  playCard(deck) {
+    const chosenCard = document.querySelector("#handPlayer1 .selected");
+
+    if (chosenCard) {
+      chosenCard.classList.remove("selected");
+      document.querySelector("#playedCardDiv1").appendChild(chosenCard);
+      player1.drawCardFromDeck(deck);
+    }
+  }
 }
 
 class Player2 {
@@ -151,16 +180,37 @@ class Player2 {
     this.handElement.innerHTML = "";
     this.hand.forEach((card) => {
       const cardDiv2 = document.createElement("div");
-      cardDiv2.innerText = card.power;
+
       cardDiv2.classList.add("cardLook");
       cardDiv2.style.backgroundImage = "url(images/Back-DG-EN-VG.webp)";
       this.handElement.appendChild(cardDiv2);
     });
   }
+  playCardPlayer2() {
+    const deckLength = cardDeck.length;
 
-  /*showCard() {
-    cardDiv2.innerText = card.power;
+    const randomIndex = Math.floor(Math.random() * deckLength);
+
+    const randomCard = cardDeck[randomIndex];
+    document.querySelector("#playedCardDiv2").innerHTML = "";
+
+    const cardDiv2 = document.createElement("div");
+    cardDiv2.innerText = randomCard.power;
     cardDiv2.classList.add("cardLook");
-    cardDiv2.style.backgroundImage = `url(${card.cardImage})`;
-  }*/
+    cardDiv2.style.backgroundImage = `url(${randomCard.cardImage})`;
+    document.querySelector("#playedCardDiv2").appendChild(cardDiv2);
+  }
 }
+
+document
+  .querySelector("#playCardButton")
+  .addEventListener("click", function () {
+    player1.playCard();
+    player2.playCardPlayer2();
+    setTimeout(function () {
+      game.comparePlayedCards();
+    }, 1000);
+    setTimeout(function () {
+      game.resetPlayedCards();
+    }, 1000);
+  });
