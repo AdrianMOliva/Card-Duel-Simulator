@@ -47,7 +47,7 @@ const cardDeck = [
   {
     name: "Swamp BattleGuard",
     power: 1500,
-    cardImage: "./images/SwampBattleGuard.webp",
+    cardImage: "./images/SwampBattleguard.webp",
   },
   {
     name: "Joker",
