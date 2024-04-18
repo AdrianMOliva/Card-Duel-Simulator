@@ -66,7 +66,7 @@ body {
   width: 780px;
   height: 650px;
   border: 1px solid white;
-  left: 500px;
+  left: 600px;
 }
 
 .deck1 {
@@ -83,6 +83,8 @@ body {
 
 .deck1 > p {
   color: white;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .deck2 {
@@ -98,6 +100,8 @@ body {
 
 .deck2 > p {
   color: white;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .cardLook {
@@ -180,17 +184,19 @@ body {
   margin: 0;
 }
 #restartButton {
-  position: absolute;
-  bottom: 0;
-  right: 0;
   height: 150px;
   width: 350px;
 
   background-color: brown;
-  font-size: 20px;
+  font-size: 50px;
   font-weight: bold;
 }
 .endingImg {
   width: 750px;
   height: 600px;
+}
+
+#resultText {
+  color: white;
+  font-size: 40px;
 }
