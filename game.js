@@ -81,7 +81,7 @@ class Game {
       this.endGame();
       resultText.innerText = "HaHa! You are not worthy to duel me, loser.";
       const loseSound = new Audio("./sounds/lose.mp3");
-      loseSound.volume = 0.1;
+      loseSound.volume = 0.05;
       loseSound.play();
       stopBackgroundMusic();
     }
