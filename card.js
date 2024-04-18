@@ -94,6 +94,10 @@ class Deck {
   }
 
   drawCard() {
+    if (this.shuffledCards.length === 0) {
+      console.log("Deck is empty");
+      this.shuffleDeck();
+    }
     return this.shuffledCards.pop();
   }
 }
@@ -127,11 +131,12 @@ class Player1 {
 
   displayHand() {
     this.handElement.innerHTML = "";
-    this.hand.forEach((card) => {
+    this.hand.forEach((card, index) => {
       const cardDiv = document.createElement("div");
       cardDiv.innerText = card.power;
       cardDiv.classList.add("cardLook");
       cardDiv.style.backgroundImage = `url(${card.cardImage})`;
+      cardDiv.dataset.index = index;
       this.handElement.appendChild(cardDiv);
     });
   }
@@ -145,11 +150,17 @@ class Player1 {
   }
   playCard(deck) {
     const chosenCard = document.querySelector("#handPlayer1 .selected");
+    const index = chosenCard.dataset.index;
 
     if (chosenCard) {
       chosenCard.classList.remove("selected");
       document.querySelector("#playedCardDiv1").appendChild(chosenCard);
-      player1.drawCardFromDeck(deck);
+
+      this.hand.splice(index, 1);
+    }
+
+    if (this.hand.length < this.maxHandSize) {
+      this.drawCardFromDeck(deck);
     }
   }
 }
@@ -205,12 +216,12 @@ class Player2 {
 document
   .querySelector("#playCardButton")
   .addEventListener("click", function () {
-    player1.playCard();
+    player1.playCard(deck);
     player2.playCardPlayer2();
     setTimeout(function () {
       game.comparePlayedCards();
-    }, 1000);
+    }, 2000);
     setTimeout(function () {
       game.resetPlayedCards();
-    }, 1000);
+    }, 3000);
   });

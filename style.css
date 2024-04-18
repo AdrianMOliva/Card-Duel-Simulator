@@ -1,21 +1,29 @@
 body {
+  margin: 0;
   padding: 0;
   text-align: center;
+  overflow: hidden;
 }
 
 #startScreen {
-  padding: 20px 0px;
+  background-image: url(images/initialscreen.webp);
+  background-size: cover;
+  overflow: hidden;
+  height: 100vh;
+  margin: 0;
 }
 
 #startScreen > p {
   font-size: 20px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: white;
 }
 
 .logoGame {
   width: 700px;
   margin-top: 30px;
   margin-bottom: 30px;
+  border: 5px solid rgb(194, 22, 22);
 }
 
 #startButton {
@@ -27,8 +35,8 @@ body {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-weight: bold;
   line-height: 10px;
-  background-color: rgba(217, 25, 25, 0.859);
-  border: 2px solid black;
+  background-color: rgb(194, 22, 22);
+  border: 2px solid white;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin: 20px;
 }
@@ -44,7 +52,6 @@ body {
   display: none;
   align-content: center;
   justify-content: center;
-  border: 1px solid red;
   width: 100%;
   height: 100%;
   background-image: url(images/alternative\ background.webp);
@@ -106,11 +113,10 @@ body {
 }
 
 .selected {
-  border: 9px solid yellow;
+  border: 9px solid red;
 }
 
 #handPlayer1 {
-  border: 1px solid blue;
   width: 400px;
   height: 150px;
   position: absolute;
@@ -121,7 +127,6 @@ body {
 }
 
 #handPlayer2 {
-  border: 1px solid blue;
   width: 400px;
   height: 150px;
   position: absolute;
@@ -133,7 +138,7 @@ body {
 
 #playedCardDiv1 {
   display: flex;
-  border: 1px solid red;
+
   width: 400px;
   height: 150px;
   position: absolute;
@@ -144,7 +149,7 @@ body {
 
 #playedCardDiv2 {
   display: flex;
-  border: 1px solid blue;
+
   width: 400px;
   height: 150px;
   position: absolute;
@@ -167,4 +172,25 @@ body {
 
 #endGame {
   display: none;
+  background-image: url(images/initialscreen.webp);
+  background-size: cover;
+
+  height: 100vh;
+  width: 100vh;
+  margin: 0;
+}
+#restartButton {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 150px;
+  width: 350px;
+
+  background-color: brown;
+  font-size: 20px;
+  font-weight: bold;
+}
+.endingImg {
+  width: 750px;
+  height: 600px;
 }

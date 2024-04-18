@@ -1,5 +1,7 @@
 const startButton = document.querySelector("#startButton");
 const restartButton = document.querySelector("#restartButton");
+const hpPlayer1 = document.querySelector("#hpPlayer1");
+const hpPlayer2 = document.querySelector("#hpPlayer2");
 let game;
 let player1;
 let deck;
@@ -23,7 +25,3 @@ function restartGame() {
 
 startButton.addEventListener("click", startGame);
 restartButton.addEventListener("click", restartGame);
-const hpPlayer1 = document.querySelector("#hpPlayer1");
-const hpPlayer2 = document.querySelector("#hpPlayer2");
-
-//document.querySelector("#playCardButton").addEventListener("click", playCard);

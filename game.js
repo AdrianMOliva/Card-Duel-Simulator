@@ -27,7 +27,7 @@ class Game {
     const randomCard = document.querySelector("#playedCardDiv2 .cardLook");
 
     if (!cardDiv || !randomCard) {
-      console.error("Error: Unable to find played cards.");
+      console.log("Error: Unable to find played cards.");
       return;
     }
 
@@ -39,17 +39,21 @@ class Game {
 
     const hpPlayer1 = document.querySelector("#hpPlayer1");
     const hpPlayer2 = document.querySelector("#hpPlayer2");
+    const resultText = document.querySelector("#resultText");
+
+    let currentHP1 = hpPlayer1.innerText;
+    let currentHP2 = hpPlayer2.innerText;
 
     if (cardPower > randomCardPower) {
       const damageDeal = cardPower - randomCardPower;
-      const newHP2 = hpPlayer1.innerText - damageDeal;
-      hpPlayer1.innerText = newHP2;
-      console.log("Player 2 HP:", newHP2);
+      currentHP1 -= damageDeal;
+      hpPlayer1.innerText = currentHP1;
+      console.log("Player 2 HP:", currentHP1);
     } else if (cardPower < randomCardPower) {
       const damageReceived = randomCardPower - cardPower;
-      const newHP1 = hpPlayer2.innerText - damageReceived;
-      hpPlayer2.innerText = newHP1;
-      console.log("Player 1 HP:", newHP1);
+      currentHP2 -= damageReceived;
+      hpPlayer2.innerText = currentHP2;
+      console.log("Player 1 HP:", currentHP2);
     }
 
     if (hpPlayer1.innerText < 0) {
@@ -57,9 +61,16 @@ class Game {
     } else if (hpPlayer2.innerText < 0) {
       hpPlayer2.innerText = 0;
     }
-    if (hpPlayer1.innerText === "0" || hpPlayer2.innerText === "0") {
+    if (hpPlayer1.innerText === "0") {
       this.gameIsOver = true;
       this.endGame();
+      resultText.innerText = "You win... For Now!";
+    }
+
+    if (hpPlayer2.innerText === "0") {
+      this.gameIsOver = true;
+      this.endGame();
+      resultText.innerText = "HaHa! You are not worthy to duel me, loser.";
     }
 
     this.resetPlayedCards();
