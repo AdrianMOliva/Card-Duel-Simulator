@@ -66,7 +66,7 @@ body {
   width: 780px;
   height: 650px;
   border: 1px solid white;
-  left: 600px;
+  left: 500px;
 }
 
 .deck1 {
@@ -108,7 +108,7 @@ body {
   justify-content: center;
   align-content: flex-end;
   font-size: 25px;
-  font-weight: bold;
+  font-weight: bolder;
   cursor: pointer;
 }
 
