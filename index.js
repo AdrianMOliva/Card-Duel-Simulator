@@ -11,7 +11,7 @@ let player2;
 let themeSong;
 
 playMusicButton.addEventListener("click", function playBackgroundMusic() {
-  themeSong = new Audio("../sounds/theme.mp3");
+  themeSong = new Audio("sounds/theme.mp3");
   themeSong.volume = 0.01;
   themeSong.play();
 });

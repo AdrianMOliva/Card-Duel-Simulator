@@ -69,7 +69,7 @@ class Game {
       this.gameIsOver = true;
       this.endGame();
       resultText.innerText = "You win... For Now!";
-      const victorySound = new Audio("../sounds/victory.mp3");
+      const victorySound = new Audio("sounds/victory.mp3");
       victorySound.volume = 0.01;
       victorySound.play();
       victorySound.loop = true;
@@ -80,7 +80,7 @@ class Game {
       this.gameIsOver = true;
       this.endGame();
       resultText.innerText = "HaHa! You are not worthy to duel me, loser.";
-      const loseSound = new Audio("../sounds/lose.mp3");
+      const loseSound = new Audio("sounds/lose.mp3");
       loseSound.volume = 0.1;
       loseSound.play();
       stopBackgroundMusic();
