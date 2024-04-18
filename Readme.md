@@ -8,28 +8,28 @@ This game is a simplified and inspired version of the Yu-Gi-Oh card game. In my 
 
 # MVP
 
--Player draws 3 cards.
--Select a card clicking on the desired one.
--The card is played after clicking the Play Card Button.
--Once a card is played, another card is drawn to have always 3 cards in the hand.
--Play background music if we click in the Play Music button in the initial scree.
+- Player draws 3 cards.
+- Select a card clicking on the desired one.
+- The card is played after clicking the Play Card Button.
+- Once a card is played, another card is drawn to have always 3 cards in the hand.
+- Play background music if we click in the Play Music button in the initial scree.
 
 # Backlog
 
--Shuffle the deck of cards and refilling it if it is empty.
--Player2 (the bot) draw random cards from the deck and plays them once we play one card.
--Stop music once you win or lose.
--Compare powers of cards and determine which value is higher.
--Subtract the difference between the higher card and the another card and subtract it to the HP.
+- Shuffle the deck of cards and refilling it if it is empty.
+- Player2 (the bot) draw random cards from the deck and plays them once we play one card.
+- Stop music once you win or lose.
+- Compare powers of cards and determine which value is higher.
+- Subtract the difference between the higher card and the another card and subtract it to the HP.
 
 # Data structure
 
 ## index.js
 
--playBackgroundMusic();
--stopBackgroundMusic();
--startGame();
--restartGame();
+- playBackgroundMusic();
+- stopBackgroundMusic();
+- startGame();
+- restartGame();
 
 ## game.js
 
