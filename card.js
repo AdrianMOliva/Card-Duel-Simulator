@@ -2,77 +2,77 @@ const cardDeck = [
   {
     name: "Blue Eyes Dragon",
     power: 3000,
-    cardImage: "images/BlueEyes.webp",
+    cardImage: "../images/BlueEyes.webp",
   },
   {
     name: "Celtic Guardian",
     power: 1400,
-    cardImage: "images/CelticGuardian.webp",
+    cardImage: "../images/CelticGuardian.webp",
   },
   {
     name: "Baby Dragon",
     power: 1200,
-    cardImage: "images/BabyDragon.webp",
+    cardImage: "../images/BabyDragon.webp",
   },
   {
     name: "Curse of Dragon",
     power: 2000,
-    cardImage: "images/CurseofDragon.webp",
+    cardImage: "../images/CurseofDragon.webp",
   },
   {
     name: "Dark Magician",
     power: 2500,
-    cardImage: "images/DarkMagician.webp",
+    cardImage: "../images/DarkMagician.webp",
   },
   {
     name: "Flame Swordsman",
     power: 1800,
-    cardImage: "images/FlameSwordsman.webp",
+    cardImage: "../images/FlameSwordsman.webp",
   },
   {
     name: "Mystical Elf",
     power: 800,
-    cardImage: "images/MysticalElf.webp",
+    cardImage: "../images/MysticalElf.webp",
   },
   {
     name: "Summoned Skull",
     power: 2500,
-    cardImage: "images/SummonedSkull.webp",
+    cardImage: "../images/SummonedSkull.webp",
   },
   {
     name: "Torike",
     power: 1200,
-    cardImage: "images/Torike.webp",
+    cardImage: "../images/Torike.webp",
   },
   {
     name: "Swamp BattleGuard",
     power: 1500,
-    cardImage: "images/SwampBattleGuard.webp",
+    cardImage: "../images/SwampBattleGuard.webp",
   },
   {
     name: "Joker",
     power: Math.floor(Math.random() * (300 - 10) + 10) * 10,
-    cardImage: "images/Joker.jpg",
+    cardImage: "../images/Joker.jpg",
   },
   {
     name: "White Magical Hat",
     power: 1000,
-    cardImage: "images/WhiteMagicalHat.webp",
+    cardImage: "../images/WhiteMagicalHat.webp",
   },
   {
     name: "Red Eyes Dragon",
     power: 2400,
-    cardImage: "images/RedEyes.webp",
+    cardImage: "../images/RedEyes.webp",
   },
   {
     name: "Battle Warrior",
     power: 700,
-    cardImage: "images/BattleWarrior.webp",
+    cardImage: "../images/BattleWarrior.webp",
   },
   {
     name: "Dream Clown",
     power: 1200,
-    cardImage: "images/DreamClown.webp",
+    cardImage: "../images/DreamClown.webp",
   },
 ];
 
@@ -149,7 +149,7 @@ class Player1 {
     clickedCard.classList.add("selected");
   }
   playCard(deck) {
-    const playedCardSound = new Audio("sounds/playedCard.wav");
+    const playedCardSound = new Audio("../sounds/playedCard.wav");
     const chosenCard = document.querySelector("#handPlayer1 .selected");
     const index = chosenCard.dataset.index;
     playedCardSound.volume = 0.2;
@@ -195,7 +195,7 @@ class Player2 {
       const cardDiv2 = document.createElement("div");
 
       cardDiv2.classList.add("cardLook");
-      cardDiv2.style.backgroundImage = "url(images/Back-DG-EN-VG.webp)";
+      cardDiv2.style.backgroundImage = "url(../images/Back-DG-EN-VG.webp)";
       this.handElement.appendChild(cardDiv2);
     });
   }
