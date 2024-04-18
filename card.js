@@ -149,9 +149,11 @@ class Player1 {
     clickedCard.classList.add("selected");
   }
   playCard(deck) {
+    const playedCardSound = new Audio("sounds/playedCard.wav");
     const chosenCard = document.querySelector("#handPlayer1 .selected");
     const index = chosenCard.dataset.index;
-
+    playedCardSound.volume = 0.2;
+    playedCardSound.play();
     if (chosenCard) {
       chosenCard.classList.remove("selected");
       document.querySelector("#playedCardDiv1").appendChild(chosenCard);

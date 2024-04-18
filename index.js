@@ -1,11 +1,27 @@
 const startButton = document.querySelector("#startButton");
+const playMusicButton = document.querySelector("#playMusic");
 const restartButton = document.querySelector("#restartButton");
 const hpPlayer1 = document.querySelector("#hpPlayer1");
 const hpPlayer2 = document.querySelector("#hpPlayer2");
+
 let game;
 let player1;
 let deck;
 let player2;
+let themeSong;
+
+playMusicButton.addEventListener("click", function playBackgroundMusic() {
+  themeSong = new Audio("sounds/theme.mp3");
+  themeSong.volume = 0.01;
+  themeSong.play();
+});
+
+function stopBackgroundMusic() {
+  if (themeSong) {
+    themeSong.pause();
+    themeSong = null;
+  }
+}
 
 function startGame() {
   deck = new Deck(cardDeck);

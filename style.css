@@ -11,6 +11,7 @@ body {
   overflow: hidden;
   height: 100vh;
   margin: 0;
+  display: flexbox;
 }
 
 #startScreen > p {
@@ -41,6 +42,20 @@ body {
   margin: 20px;
 }
 
+#playMusic {
+  width: 200px;
+  height: 50px;
+
+  font-size: 20px;
+  text-align: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bold;
+  line-height: 10px;
+  background-color: rgb(194, 22, 22);
+  border: 2px solid white;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 #gameContainer {
   display: flex;
   width: 100vw;
@@ -66,7 +81,8 @@ body {
   width: 780px;
   height: 650px;
   border: 1px solid white;
-  left: 600px;
+  left: calc(50% - 390px);
+  /*if not left 600px*/
 }
 
 .deck1 {
@@ -111,9 +127,10 @@ body {
   background-size: cover;
   justify-content: center;
   align-content: flex-end;
-  font-size: 25px;
+  font-size: 30px;
   font-weight: bolder;
   cursor: pointer;
+  padding-bottom: 3px;
 }
 
 .selected {
@@ -180,8 +197,9 @@ body {
   background-size: cover;
 
   height: 100vh;
-  width: 100vh;
+  width: 100vw;
   margin: 0;
+  border: 1px solid red;
 }
 #restartButton {
   height: 150px;

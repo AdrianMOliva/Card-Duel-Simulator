@@ -31,11 +31,15 @@ class Game {
       return;
     }
 
-    const cardPower = cardDiv.innerText;
-    const randomCardPower = randomCard.innerText;
+    const cardPower = parseInt(cardDiv.innerText);
+    const randomCardPower = parseInt(randomCard.innerText);
 
     console.log("Card power P1:", cardPower);
     console.log("Card power P2:", randomCardPower);
+    if (isNaN(cardPower) || isNaN(randomCardPower)) {
+      console.log("Error: Invalid card power.");
+      return;
+    }
 
     const hpPlayer1 = document.querySelector("#hpPlayer1");
     const hpPlayer2 = document.querySelector("#hpPlayer2");
@@ -65,12 +69,21 @@ class Game {
       this.gameIsOver = true;
       this.endGame();
       resultText.innerText = "You win... For Now!";
+      const victorySound = new Audio("sounds/victory.mp3");
+      victorySound.volume = 0.01;
+      victorySound.play();
+      victorySound.loop = true;
+      stopBackgroundMusic();
     }
 
     if (hpPlayer2.innerText === "0") {
       this.gameIsOver = true;
       this.endGame();
       resultText.innerText = "HaHa! You are not worthy to duel me, loser.";
+      const loseSound = new Audio("sounds/lose.mp3");
+      loseSound.volume = 0.1;
+      loseSound.play();
+      stopBackgroundMusic();
     }
 
     this.resetPlayedCards();
@@ -93,6 +106,7 @@ class Game {
     this.gameIsOver = true;
 
     this.gameScreen.style.display = "none";
+    this.boardScreen.style.display = "none";
 
     this.gameEndScreen.style.display = "block";
   }
