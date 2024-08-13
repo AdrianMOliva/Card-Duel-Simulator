@@ -1,6 +1,6 @@
 # Card Duel Simulator
 
-Click here to see deployed game: https://adrianmoliva.github.io/Project-Module-1/
+Click here to see deployed game: https://adrianmoliva.github.io/Card-Duel-Simulator/
 
 # Description
 
